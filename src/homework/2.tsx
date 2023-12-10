@@ -2,8 +2,10 @@ import React, { useReducer } from "react";
 
 type State = {
   isRequestInProgress: boolean;
-  requestStep: string;
+  requestStep: RequestStep;
 };
+
+type RequestStep = "idle" | "start" | "pending" | "finished";
 
 type Action =
   | { type: "START_REQUEST" }
